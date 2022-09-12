@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>new</title>
+</head>
+<body>
+  <div class="results">
+      <center>
+        <h2 id="name" class="text-uppercase">{{title}}</h2>
+      </center>
+  </div>
+  <br>
+
+  <div id="mcontent">
+    <img class="poster" src={{poster}}>
+    <div id="details">
+      <br/>
+      <h6 id="title">TITLE: &nbsp;{{title}}</h6>
+      <h6 id="overview">OVERVIEW: <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{overview}}</h6>
+      <h6 id="vote_average">RATING: &nbsp;{{vote_average}}/10 ({{vote_count}} votes)</h6>
+      <h6 id="genres">GENRE: &nbsp;{{genres}}</h6>
+      <h6 id="date">RELEASE DATE: &nbsp;{{release_date}}</h6>
+      <h6 id="runtime">RUNTIME: &nbsp;{{runtime}}</h6>
+    </div>
+   </div>
+  
+  {% if casts|length > 1 %}
+  <div class="movie" style="color: #E8E8E8;">
+      <center>
+    <h3>TOP CAST</h3>
+  </center>
+  </div>
+
+  <div class="movie-content">
+        {% for name, details in casts.items() if not casts.hidden %}
+          <div class="castcard card" style="width: 15rem;" title="Click to know more about {{name}}" data-toggle="modal" data-target="#{{details[0]}}">
+            <div class="imghvr">
+              <img class="card-img-top cast-img" id="{{details[0]}}" height="360" width="240" alt="{{name}} - profile" src="{{details[2]}}">
+              <figcaption class="fig">
+                <button class="card-btn btn btn-danger"> Know More </button>
+              </figcaption>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{name|title}}</h5>
+              <h5 class="card-title"><span style="color:#756969;font-size: 20px;">Character: {{details[1]|title}}</span></h5>
+            </div>
+          </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
+
+</body>
+</html>

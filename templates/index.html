@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Movie Recommendations</title>
+	<link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+<!--	<div id = "url">{{url}}</div>-->
+	<center><h1>Movie Recommendation System</h1></center>
+	<div id = "input-text">
+		<center><input type="text" id="input-movie" list="json-datalist" placeholder="Enter name of movie" class="take-input"></center>
+		<datalist id="json-datalist"></datalist>
+    <center><button id = "choose">ENTER</button></center>
+	</div>
+
+<!-- 	<div class="fail">
+    <center><h3>Sorry! The movie you requested is not in our database. 
+    Please check the spelling or try with other movies!</h3></center>
+  </div> -->
+
+	<script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
+</body>
+</html>

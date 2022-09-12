@@ -1,0 +1,46 @@
+body{
+	background-image: url("background1.jpg");
+	background-size: cover;
+}
+
+h1{
+	color: white;
+}
+
+.choose{
+	width: 100px;
+	height: 20px;
+}
+
+.take-input{
+	width: 50%;
+	height: 30px;
+}
+
+.poster{
+	border-radius: 40px;
+	margin-left: 90px;
+	height="400";
+	width="250";
+	margin-bottom: 5%;
+}
+
+.title{
+	color:white
+}
+
+.overview{
+	color:white;max-width: 85%
+}
+
+.vote_average{
+	color:white;
+}
+
+.genres{
+	color:white;
+}
+
+.date{
+	color:white;
+}
