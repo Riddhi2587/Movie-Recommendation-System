@@ -10,7 +10,7 @@ function listener(){
 listener();
 
 function initialiase(){
-    var my_api_key = '5549edd5355b77a5978b3bcaf619da1d';
+    var my_api_key = 'YOUR__API_KEY';
     var title = document.getElementById("input-movie").value;
     console.log(title);
     if (title=="") {
